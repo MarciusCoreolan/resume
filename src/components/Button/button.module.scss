@@ -1,0 +1,13 @@
+@use 'styles' as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  cursor: pointer;
+  border: none;
+
+  // add you style for button
+}

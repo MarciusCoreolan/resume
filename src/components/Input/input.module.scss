@@ -1,0 +1,55 @@
+@use 'styles';
+
+.inputContainer {
+  position: relative;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+
+  // add you style for input
+}
+
+.input {
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  // add you style for input
+}
+
+.icon {
+  line-height: 0;
+  max-height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // add you style for icon
+}
+
+.error {
+  pointer-events: none;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  line-height: 10px;
+
+  // add you style for error
+  color: red;
+  font-size: 10px;
+}
+
+.label {
+  // add you style for label
+  font-size: 10px;
+}

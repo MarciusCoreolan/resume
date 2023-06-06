@@ -1,0 +1,8 @@
+@use "styles" as *;
+
+.examplePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a8a8a8;
+}

@@ -1,28 +1,49 @@
 $mobile-width: 320px;
+$mobile-width-big: 450px;
 $tablet-width: 768px;
 $laptop-width: 1024px;
 $desktop-width: 1440px;
+$desktop-width-medium: 1600px;
+$desktop-width-big: 1920px;
 
 @mixin mobile {
-  @media (min-width: #{$tablet-width}) {
+  @media (max-width: #{$mobile-width-big}) {
+    @content;
+  }
+}
+
+@mixin mobile-big {
+  @media (max-width: #{$tablet-width}) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media (min-width: #{$laptop-width}) {
+  @media (max-width: #{$laptop-width}) {
     @content;
   }
 }
 
 @mixin laptop {
-  @media (min-width: #{$desktop-width}) {
+  @media (max-width: #{$desktop-width}) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (max-width: #{$desktop-width}) {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-medium {
+  @media (min-width: #{$desktop-width-medium}) {
+    @content;
+  }
+}
+
+@mixin desktop-big {
+  @media (min-width: #{$desktop-width-big}) {
     @content;
   }
 }

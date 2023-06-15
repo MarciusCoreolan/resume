@@ -1,0 +1,56 @@
+@use 'styles' as *;
+
+.pageNotFound {
+  background: url('/assets/images/bg.webp') no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentWrapper {
+  color: $color-default-white;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  font-family: $font-Monserrat;
+  font-weight: $fw-regular;
+  font-size: 144px;
+  line-height: 170px;
+
+  margin-bottom: 40px;
+
+  @include tablet {
+    font-size: 100px;
+    line-height: 100px;
+  }
+}
+.subTitle {
+  font-weight: $fw-regular;
+  font-size: 48px;
+  line-height: 150%;
+
+  margin-bottom: 160px;
+
+  @include tablet {
+    margin-bottom: 40px;
+    font-size: 30px;
+    line-height: 100%;
+  }
+}
+
+.button {
+  border-color: $color-default-white;
+  color: $color-default-white;
+
+  svg {
+    color: $color-default-white;
+  }
+}

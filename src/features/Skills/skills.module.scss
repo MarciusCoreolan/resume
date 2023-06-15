@@ -1,0 +1,150 @@
+@use 'styles' as *;
+
+.skills {
+  width: 100%;
+  background-color: $color-light-black;
+  color: $color-default-white;
+  padding: 40px 0 40px;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  @include mobile-big {
+    position: static;
+  }
+}
+
+.titleWrapper {
+  margin-bottom: 50px;
+  min-height: 59px;
+
+  @include tablet {
+    margin-bottom: 20px;
+  }
+}
+
+.title {
+  font-family: $font-Monserrat;
+  font-weight: $fw-medium;
+  font-size: 48px;
+  line-height: 59px;
+
+  @include desktop-medium {
+    font-size: 58px;
+    line-height: 69px;
+  }
+
+  @include tablet {
+    font-size: 38px;
+    line-height: 49px;
+  }
+
+  @include mobile-big {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+
+  @include desktop-medium {
+    grid-template-columns: repeat(5, 250px);
+  }
+  @include tablet {
+    grid-template-columns: repeat(5, 120px);
+  }
+
+  @include mobile-big {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+}
+
+.gridCell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 180px;
+  border: 1px solid $color-grey;
+  border-top: none;
+  border-right: none;
+
+  @include desktop-medium {
+    height: 220px;
+  }
+  @include tablet {
+    height: 120px;
+  }
+
+  @include mobile-big {
+    width: 50%;
+    border: none;
+  }
+
+  &:nth-child(5n + 1) {
+    border-left: none;
+
+    @include mobile-big {
+      border: none;
+    }
+  }
+
+  &:nth-last-child(-n + 5) {
+    border-bottom: none;
+    @include mobile-big {
+      border: none;
+    }
+  }
+
+  &:hover .gridCellItem {
+    transform: scale(1.3);
+  }
+}
+
+.gridCellItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.skillIcon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+
+  @include desktop-medium {
+    width: 70px;
+    height: 70px;
+  }
+
+  @include tablet {
+    width: 30px;
+    height: 30px;
+  }
+  @include mobile-big {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.skillTitle {
+  margin-top: 10px;
+
+  @include desktop-medium {
+    font-size: 24px;
+  }
+}

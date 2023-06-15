@@ -4,3 +4,12 @@
   line-height: 14px;
   font-weight: $fw-regular;
 }
+
+@mixin wrapper {
+  max-width: 1140px;
+  width: 100%;
+
+  @include laptop {
+    padding: 0 20px;
+  }
+}

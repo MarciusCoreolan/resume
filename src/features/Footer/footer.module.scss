@@ -1,6 +1,50 @@
 @use 'styles' as *;
 
 .footer {
-  background-color: #444444;
-  color: green;
+  background-color: $color-black;
+  color: $color-default-white;
+  padding-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include laptop {
+    padding: 20px 20px;
+  }
+
+  @include tablet {
+    padding: 20px 20px;
+  }
+}
+
+.contactsWrap {
+  @include wrapper;
+  padding: 30px 0 20px;
+  border-bottom: 1px solid $color-grey;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include laptop {
+    padding-bottom: 10px;
+  }
+
+  @include tablet {
+    border: none;
+  }
+}
+
+.contacts {
+  display: flex;
+  gap: 10px;
+}
+
+.contactsTitle {
+  font-family: $font-Monserrat;
+  font-weight: $fw-regular;
+  font-size: 24px;
+  line-height: 29px;
 }

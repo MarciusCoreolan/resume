@@ -1,4 +1,5 @@
 import { HomePage } from './HomePage/HomePage'
-import { ExamplePage } from './ExamplePage/ExamplePage'
+import { PageNotFound } from './PageNotFound/PageNotFound'
+import { ThankYouPage } from './ThankYouPage/ThankYouPage'
 
-export { ExamplePage, HomePage }
+export { HomePage, PageNotFound, ThankYouPage }

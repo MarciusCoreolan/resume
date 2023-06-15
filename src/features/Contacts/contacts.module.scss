@@ -1,0 +1,147 @@
+@use 'styles' as *;
+
+.contacts {
+  width: 100%;
+  min-height: 100vh;
+  background: $color-default-black url('/assets/images/contactsBg.webp')
+    no-repeat left;
+  background-size: 50% 100%;
+  color: $color-default-white;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 6;
+
+  @include mobile-big {
+    position: static;
+  }
+
+  @include mobile-big {
+    background-position: bottom;
+    background-size: 100% 50%;
+    padding: 40px 0;
+  }
+}
+
+.wrapper {
+  @include wrapper;
+
+  display: flex;
+  justify-content: space-between;
+
+  @include mobile-big {
+    flex-direction: column-reverse;
+  }
+}
+
+.sendMe {
+  width: 50%;
+  padding-right: 20px;
+
+  @include mobile-big {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+.sendMeTitle,
+.servicesTitle {
+  font-weight: $fw-medium;
+  font-size: 48px;
+  line-height: 59px;
+
+  margin-bottom: 50px;
+
+  @include desktop-medium {
+    font-size: 58px;
+    line-height: 69px;
+  }
+
+  @include tablet {
+    font-size: 38px;
+    line-height: 49px;
+  }
+
+  @include mobile-big {
+    text-align: center;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.servicesTitle {
+  text-align: end;
+
+  @include mobile-big {
+    text-align: center;
+  }
+}
+
+.input {
+  margin-bottom: 50px;
+
+  input {
+    color: $color-default-white;
+    font-weight: $fw-medium;
+    font-size: 16px;
+    line-height: 20px;
+
+    @include desktop-medium {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+}
+
+.button {
+  border-color: $color-default-white;
+  color: $color-default-white;
+
+  svg {
+    color: $color-default-white;
+  }
+}
+.services {
+  width: 50%;
+  padding-left: 50px;
+
+  @include mobile-big {
+    width: 100%;
+    padding: 0 0 50px 0;
+  }
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+
+  @include desktop-medium {
+    font-size: 27px;
+    line-height: 25px;
+  }
+}
+
+.serviceIcon {
+  width: 45px;
+  height: 35px;
+
+  img {
+    width: 100%;
+  }
+
+  @include desktop-medium {
+    width: 60px;
+    height: 35px;
+  }
+
+  @include tablet {
+    width: 40px;
+    height: 25px;
+  }
+}

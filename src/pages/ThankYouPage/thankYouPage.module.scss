@@ -1,0 +1,78 @@
+@use 'styles' as *;
+
+.thankYouPage {
+  background: url('/assets/images/bg.webp') no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentWrapper {
+  text-align: center;
+  background-color: $color-default-white;
+  max-width: 660px;
+  width: 100%;
+  min-height: 450px;
+  margin: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  color: $color-default-black;
+  padding: 30px;
+  position: relative;
+
+  flex-grow: 1;
+
+  &:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: $color-default-white;
+    transform: translateX(-50%) rotate(45deg);
+
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+  }
+}
+
+.title {
+  font-family: $font-Monserrat;
+  font-weight: $fw-bold;
+  font-size: 20px;
+  line-height: 150%;
+
+  margin: 30px 0 15px;
+}
+
+.subTitle {
+  font-weight: $fw-regular;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.footer {
+  width: 100%;
+  padding: 46px;
+  background-color: $color-light-turquoise;
+
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  border-color: $color-default-white;
+  color: $color-default-white;
+
+  svg {
+    color: $color-default-white;
+  }
+}

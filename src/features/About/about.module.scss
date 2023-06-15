@@ -1,0 +1,100 @@
+@use 'styles' as *;
+
+.about {
+  width: 100%;
+  min-height: 100vh;
+  background: $color-light-grey url('/assets/images/aboutBg.webp') no-repeat
+    left;
+  background-size: 50% 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  @include mobile-big {
+    background-image: none;
+    position: static;
+  }
+}
+
+.wrapper {
+  @include wrapper;
+  text-align: end;
+  padding: 20px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  @include mobile-big {
+    align-items: center;
+  }
+}
+
+.title {
+  margin-bottom: 48px;
+
+  font-style: normal;
+  font-weight: $fw-medium;
+  font-size: 48px;
+  line-height: 59px;
+  color: $color-default-black;
+
+  @include desktop-medium {
+    font-size: 58px;
+    line-height: 69px;
+  }
+
+  @include tablet {
+    font-size: 38px;
+    line-height: 49px;
+  }
+
+  @include mobile-big {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.textSection {
+  font-style: normal;
+  font-weight: $fw-medium;
+  font-size: 16px;
+  line-height: 150%;
+  font-family: $font-Monserrat;
+
+  color: $color-grey;
+  width: 40%;
+
+  @include desktop-medium {
+    font-size: 19px;
+    line-height: 150%;
+  }
+  @include tablet {
+    font-size: 16px;
+    line-height: 110%;
+  }
+  @include mobile-big {
+    width: 100%;
+    text-align: center;
+
+    font-size: 12px;
+    line-height: 100%;
+  }
+}
+
+.text {
+  margin-bottom: 40px;
+
+  @include tablet {
+    margin-bottom: 30px;
+  }
+  @include mobile-big {
+    margin-bottom: 20px;
+  }
+}

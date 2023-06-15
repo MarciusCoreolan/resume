@@ -1,0 +1,72 @@
+@use 'styles' as *;
+
+.portfolio {
+  width: 100%;
+  height: 100vh;
+  background-color: $color-default-white;
+  padding: 40px 0 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: sticky;
+  z-index: 3;
+  top: 0;
+
+  @include mobile-big {
+    position: static;
+  }
+}
+
+.title {
+  font-family: $font-Monserrat;
+  font-style: normal;
+  font-weight: $fw-medium;
+  font-size: 48px;
+  line-height: 59px;
+
+  margin-bottom: 20px;
+  color: $color-default-black;
+
+  @include desktop-medium {
+    font-size: 58px;
+    line-height: 69px;
+  }
+  @include tablet {
+    font-size: 38px;
+    line-height: 49px;
+  }
+  @include mobile-big {
+    font-size: 24px;
+    line-height: 24px;
+
+    margin-bottom: 10px;
+  }
+}
+
+.sliderWrap {
+  height: 100%;
+  width: 70%;
+  padding: 40px;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  width: 80%;
+  height: 100%;
+}
+
+.button {
+  position: absolute;
+  top: 20%;
+  right: 0;
+
+  max-width: 150px;
+}

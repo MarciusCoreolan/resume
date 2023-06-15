@@ -1,0 +1,7 @@
+@use 'styles' as *;
+
+.logo {
+  @include mobile {
+    display: none;
+  }
+}

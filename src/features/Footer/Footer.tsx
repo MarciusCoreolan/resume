@@ -1,12 +1,34 @@
 import { FC } from 'react'
-import cn from 'classnames'
+import Link from 'next/link'
+import Image from 'next/image'
+
+import { contacts_mock } from 'shared/mocks/navigation_mock'
 
 import s from './footer.module.scss'
 
-export interface FooterProps {
-  classNames?: string
-}
+export const Footer: FC = () => {
+  return (
+    <div className={s.footer}>
+      <div className={s.contactsWrap}>
+        <div className={s.contactsTitle}>Contacts</div>
 
-export const Footer: FC<FooterProps> = ({ classNames }) => {
-  return <div className={cn(s.footer, classNames)}>Footer</div>
+        <div className={s.contacts}>
+          {contacts_mock.map(item => (
+            <div key={item.link}>
+              <Link href={item.link}>
+                <a target={'_blank'}>
+                  <Image
+                    src={item.icon}
+                    width={30}
+                    height={30}
+                    alt={'contact icon'}
+                  />
+                </a>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }

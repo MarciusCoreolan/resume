@@ -1,0 +1,261 @@
+@use 'styles' as *;
+
+.intro {
+  width: 100%;
+  height: 100vh;
+  background-color: $color-default-white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile-big {
+    position: relative;
+  }
+}
+
+.cup {
+  width: 200px;
+  height: 170px;
+  background: url('/assets/images/cupOfCofee.webp') no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  right: 25%;
+  bottom: 20%;
+
+  @include desktop-big {
+    width: 300px;
+    height: 270px;
+
+    right: 20%;
+    bottom: 15%;
+  }
+  @include laptop {
+    width: 150px;
+    height: 130px;
+
+    right: 20%;
+    bottom: 15%;
+  }
+
+  @include tablet {
+    width: 120px;
+    height: 100px;
+
+    right: 20%;
+    bottom: 15%;
+  }
+
+  @include mobile-big {
+    width: 80px;
+    height: 70px;
+
+    right: 10%;
+    bottom: 10%;
+  }
+}
+
+.laptop {
+  width: 850px;
+  height: 750px;
+  background: url('/assets/images/laptop.webp') no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  right: -22%;
+  top: -45%;
+
+  @include desktop-medium {
+    width: 950px;
+    height: 750px;
+
+    right: -25%;
+    top: -35%;
+  }
+
+  @include desktop-big {
+    width: 1050px;
+    height: 850px;
+
+    right: -25%;
+    top: -35%;
+  }
+
+  @include laptop {
+    width: 650px;
+    height: 550px;
+
+    right: -25%;
+    top: -35%;
+  }
+
+  @include tablet {
+    width: 550px;
+    height: 450px;
+
+    right: -25%;
+    top: -35%;
+  }
+
+  @include mobile-big {
+    right: 100%;
+    top: -100%;
+  }
+}
+
+.copybook {
+  width: 300px;
+  height: 350px;
+  background: url('/assets/images/copybook.webp') no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  left: 0;
+  bottom: 15%;
+
+  @include desktop-big {
+    width: 400px;
+    height: 450px;
+
+    left: 0;
+    bottom: 15%;
+  }
+
+  @include laptop {
+    width: 200px;
+    height: 250px;
+
+    left: 0;
+    bottom: 10%;
+  }
+
+  @include tablet {
+    width: 150px;
+    height: 200px;
+
+    left: 0;
+    bottom: 10%;
+  }
+
+  @include mobile-big {
+    width: 100px;
+    height: 120px;
+
+    left: 0;
+    bottom: 10%;
+  }
+
+  @include mobile {
+    left: 0;
+    bottom: 5%;
+  }
+}
+
+.flower {
+  width: 300px;
+  height: 300px;
+  background: url('/assets/images/flower.webp') no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  left: 40%;
+  top: -15%;
+
+  @include desktop-big {
+    width: 400px;
+    height: 400px;
+
+    left: 30%;
+    top: -20%;
+  }
+
+  @include laptop {
+    width: 250px;
+    height: 250px;
+
+    left: 20%;
+    top: -15%;
+  }
+  @include tablet {
+    width: 200px;
+    height: 200px;
+
+    left: 20%;
+    top: -15%;
+  }
+
+  @include mobile-big {
+    width: 140px;
+    height: 140px;
+
+    left: 20%;
+    top: -15%;
+  }
+
+  @include mobile {
+    left: 0;
+    top: -10%;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-family: $font-Monserrat;
+  text-transform: uppercase;
+  font-weight: $fw-light;
+  font-size: 74px;
+  line-height: 80px;
+  text-align: center;
+
+  color: $color-french-grey;
+  margin-bottom: 56px;
+
+  @include desktop-big {
+    font-size: 94px;
+    line-height: 80px;
+  }
+
+  @include laptop {
+    font-size: 64px;
+    line-height: 70px;
+  }
+  @include tablet {
+    font-size: 44px;
+    line-height: 50px;
+  }
+  @include mobile-big {
+    font-size: 30px;
+    line-height: 30px;
+
+    margin-bottom: 20px;
+  }
+}
+
+.button {
+  div[class*='buttonBgHover'] {
+    background-color: $color-default-black;
+  }
+
+  button {
+    &:hover {
+      transition: 1s;
+      color: $color-default-white;
+
+      svg {
+        transition: 2s;
+        color: $color-default-white;
+      }
+    }
+  }
+}

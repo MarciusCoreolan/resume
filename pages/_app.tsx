@@ -1,21 +1,14 @@
 import type { AppProps } from 'next/app'
-import { Provider } from 'react-redux'
 
-import { Layout, ModalViewer } from 'features'
-
-import { store } from 'store'
+import { Layout } from 'features'
 
 import 'styles/globals.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={store}>
-      <ModalViewer />
-
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </Provider>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }
 

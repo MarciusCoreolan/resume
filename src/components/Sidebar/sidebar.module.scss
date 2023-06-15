@@ -1,0 +1,70 @@
+@use 'styles' as *;
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+
+  width: 500px;
+  height: 100vh;
+  background-color: $color-light-black;
+  transition: 0.5s;
+  transform: translateX(100%);
+  visibility: hidden;
+  padding: 50px;
+
+  @include mobile-big {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+.visible {
+  transition: 0.5s;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.closeButton {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 80px;
+
+  @include mobile-big {
+    margin-bottom: 20px;
+    margin-left: 90%;
+  }
+}
+
+.navLink {
+  margin-bottom: 40px;
+
+  a {
+    font-weight: $fw-medium;
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-default-white;
+  }
+
+  @include mobile-big {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.contacts {
+  margin-top: 100px;
+  display: flex;
+  gap: 10px;
+
+  @include mobile-big {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+.links {
+  gap: 20px;
+  cursor: pointer;
+}

@@ -1,16 +1,21 @@
-@use 'styles';
+@use 'styles' as *;
 
 .inputContainer {
   position: relative;
+  max-width: 400px;
 }
 
 .inputWrap {
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: white;
+  background-color: transparent;
+  border-bottom: 1px solid $color-default-white;
+  height: 40px;
 
-  // add you style for input
+  @include desktop-medium {
+    border-bottom: 2px solid $color-default-white;
+  }
 }
 
 .input {
@@ -22,8 +27,6 @@
   outline: none;
   border: none;
   background-color: transparent;
-
-  // add you style for input
 }
 
 .icon {
@@ -51,5 +54,12 @@
 
 .label {
   // add you style for label
-  font-size: 10px;
+  font-weight: $fw-medium;
+  font-size: 16px;
+  line-height: 20px;
+
+  @include desktop-medium {
+    font-size: 22px;
+    line-height: 30px;
+  }
 }

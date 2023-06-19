@@ -17,6 +17,8 @@
   z-index: 2;
 
   @include mobile-big {
+    min-height: auto;
+    padding: 50px 0;
     background-image: none;
     position: static;
   }
@@ -54,11 +56,6 @@
     font-size: 38px;
     line-height: 49px;
   }
-
-  @include mobile-big {
-    font-size: 24px;
-    line-height: 24px;
-  }
 }
 
 .textSection {
@@ -83,8 +80,8 @@
     width: 100%;
     text-align: center;
 
-    font-size: 12px;
-    line-height: 100%;
+    font-size: 16px;
+    line-height: 130%;
   }
 }
 

@@ -199,7 +199,7 @@
 
   @include mobile {
     left: 0;
-    top: -10%;
+    top: -8%;
   }
 }
 
@@ -233,12 +233,6 @@
   @include tablet {
     font-size: 44px;
     line-height: 50px;
-  }
-  @include mobile-big {
-    font-size: 30px;
-    line-height: 30px;
-
-    margin-bottom: 20px;
   }
 }
 

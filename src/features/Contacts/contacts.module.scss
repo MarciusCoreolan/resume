@@ -68,8 +68,6 @@
 
   @include mobile-big {
     text-align: center;
-    font-size: 24px;
-    line-height: 24px;
   }
 }
 
@@ -99,8 +97,10 @@
 
 .button {
   border-color: $color-default-white;
-  color: $color-default-white;
 
+  button {
+    color: $color-default-white;
+  }
   svg {
     color: $color-default-white;
   }

@@ -15,9 +15,10 @@ export const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <div className={s.buttonWrapper}>
+    <div className={cn(s.buttonWrapper, classNames)}>
       <div className={s.buttonBgHover} />
-      <button className={cn(s.button, classNames)} onClick={onClick} {...props}>
+
+      <button className={s.button} onClick={onClick} {...props}>
         {children}
       </button>
     </div>

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -14,6 +14,14 @@ export interface SidebarProps {
 }
 
 export const Sidebar: FC<SidebarProps> = ({ onClose, isOpened }) => {
+  useEffect(() => {
+    if (isOpened) {
+      document.body.style.overflowY = 'hidden'
+    } else {
+      document.body.style.overflowY = 'auto'
+    }
+  }, [isOpened])
+
   return (
     <div className={cn(s.sidebar, { [s.visible]: isOpened })}>
       <button className={s.closeButton} onClick={onClose}>

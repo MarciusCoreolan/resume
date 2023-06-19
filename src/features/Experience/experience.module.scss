@@ -11,6 +11,7 @@
   z-index: 4;
 
   @include mobile-big {
+    min-height: auto;
     position: static;
   }
 }
@@ -99,6 +100,10 @@
   @include desktop-medium {
     padding-top: 7%;
   }
+
+  @include mobile-big {
+    align-self: center;
+  }
 }
 
 .titles {
@@ -125,12 +130,6 @@
     font-size: 38px;
     line-height: 49px;
   }
-  @include mobile-big {
-    font-size: 24px;
-    line-height: 24px;
-
-    margin-bottom: 10px;
-  }
 }
 
 .totalExperience {
@@ -148,8 +147,6 @@
   }
   @include mobile-big {
     text-align: center;
-    font-size: 20px;
-    line-height: 20px;
   }
 }
 

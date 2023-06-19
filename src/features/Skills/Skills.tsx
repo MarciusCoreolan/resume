@@ -11,15 +11,13 @@ import s from './skills.module.scss'
 export const Skills: FC = () => {
   const { width } = useWindowDimensions()
 
-  const titleRef = useRef(null)
   const gridRef = useRef(null)
-  const isInViewTitle = useInView(titleRef, { once: true })
-  const isInViewGrid = useInView(gridRef, { once: true })
+  const isInView = useInView(gridRef, { once: true })
 
   return (
     <div className={s.skills} id={'skills'}>
-      <div className={s.titleWrapper} ref={titleRef}>
-        {isInViewTitle ? (
+      <div className={s.titleWrapper}>
+        {isInView ? (
           <motion.h2
             className={s.title}
             initial={{ x: '110vw' }}
@@ -37,7 +35,7 @@ export const Skills: FC = () => {
       </div>
 
       <div ref={gridRef}>
-        {isInViewGrid ? (
+        {isInView ? (
           <motion.div
             className={s.grid}
             initial={{ opacity: 0 }}

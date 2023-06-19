@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Button } from 'components'
 
 import { portfolio_mock } from 'shared/mocks/portfolio_mock'
-import Arrow from '/public/assets/icons/arrow.svg'
+import Arrow from '../../../public/assets/icons/arrow.svg'
 
 import s from './portfolio.module.scss'
 import 'swiper/css'
@@ -14,6 +14,7 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import 'swiper/css/scrollbar'
 import 'swiper/css/effect-cube'
+import Link from 'next/link'
 
 export const Portfolio: FC = () => {
   return (
@@ -33,16 +34,18 @@ export const Portfolio: FC = () => {
             shadowOffset: 20,
             shadowScale: 0.94,
           }}
-          pagination={{ clickable: true }}
+          pagination
           navigation
         >
           {portfolio_mock.map((item, index) => (
             <SwiperSlide key={index} className={s.slide}>
-              <Image src={item.slide} layout='fill' alt={'portfolio image'} />
+              <Image src={item.slide} className={s.slideImage} layout='fill' alt={'portfolio image'} />
 
-              <Button onClick={() => {}} classNames={s.button}>
-                Go to site <Arrow />
-              </Button>
+              <Link href={item.link}>
+                <Button onClick={() => {}} classNames={s.button}>
+                  Go to site <Arrow />
+                </Button>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

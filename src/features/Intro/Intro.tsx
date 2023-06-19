@@ -24,7 +24,7 @@ export const Intro: FC = () => {
       />
       <motion.div
         className={s.copybook}
-        initial={{ y: '-500%' }}
+        initial={{ y: '-150vh' }}
         animate={{ y: 0, rotate: '340deg' }}
         transition={{ duration: 1, delay: 1.3 }}
       />

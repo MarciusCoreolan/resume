@@ -41,7 +41,7 @@
   }
 
   @include mobile-big {
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -50,10 +50,6 @@
   padding: 40px;
   flex-grow: 1;
   display: flex;
-
-  @include mobile-big {
-    padding: 0;
-  }
 
   div[class*='swiper-button-next'] {
     position: absolute;
@@ -99,6 +95,7 @@
     width: 60%;
   }
   @include mobile-big {
+    padding: 20px;
     width: 100%;
   }
 }

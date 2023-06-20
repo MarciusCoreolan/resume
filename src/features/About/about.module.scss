@@ -1,20 +1,28 @@
 @use 'styles' as *;
 
+.aboutWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  overflow: hidden;
+
+  min-height: 150vh;
+
+  @include mobile-big {
+    min-height: auto;
+    position: relative;
+  }
+}
 .about {
   width: 100%;
   min-height: 100vh;
   background: $color-light-grey url('/assets/images/aboutBg.webp') no-repeat
     left;
-  background-size: 50% 100%;
-  overflow: hidden;
+  background-size: 50% 101%;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  position: sticky;
-  top: 0;
-  z-index: 2;
 
   @include mobile-big {
     min-height: auto;

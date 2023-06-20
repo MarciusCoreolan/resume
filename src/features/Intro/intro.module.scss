@@ -1,21 +1,27 @@
 @use 'styles' as *;
 
-.intro {
-  width: 100%;
-  height: 100vh;
-  background-color: $color-default-white;
+.introWrapper {
   position: sticky;
   top: 0;
   z-index: 1;
   overflow: hidden;
 
+  min-height: 150vh;
+
+  @include mobile-big {
+    min-height: auto;
+    position: relative;
+  }
+}
+.intro {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $color-default-white;
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @include mobile-big {
-    position: relative;
-  }
 }
 
 .cup {
@@ -237,17 +243,17 @@
 }
 
 .button {
+  color: $color-default-black;
+
   div[class*='buttonBgHover'] {
     background-color: $color-default-black;
   }
 
-  button {
-    &:hover {
-      transition: 1s;
+  &:hover {
+    div[class*='button'] {
       color: $color-default-white;
 
       svg {
-        transition: 2s;
         color: $color-default-white;
       }
     }

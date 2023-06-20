@@ -1,8 +1,7 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode } from 'react'
 import { useRouter } from 'next/router'
 
-import { Sidebar } from 'components'
-import { Header, Footer } from 'features'
+import { Footer } from 'features'
 
 import { noLayout } from './utils'
 
@@ -13,7 +12,6 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-  const [isOpen, setIsOpen] = useState(false)
   const { pathname } = useRouter()
 
   return (
@@ -22,8 +20,6 @@ export const Layout = ({ children }: LayoutProps) => {
         <main className={s.content}>{children}</main>
       ) : (
         <>
-          <Sidebar isOpened={isOpen} onClose={() => setIsOpen(false)} />
-          <Header onOpen={() => setIsOpen(prevState => !prevState)} />
           <div className={s.content}>{children}</div>
           <Footer />
         </>

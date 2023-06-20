@@ -1,5 +1,19 @@
 @use 'styles' as *;
 
+.contactsWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+
+  overflow: hidden;
+  min-height: 100vh;
+
+  @include mobile-big {
+    min-height: auto;
+    position: relative;
+  }
+}
+
 .contacts {
   width: 100%;
   min-height: 100vh;
@@ -7,19 +21,10 @@
     no-repeat left;
   background-size: 50% 100%;
   color: $color-default-white;
-  overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  position: sticky;
-  top: 0;
-  z-index: 6;
-
-  @include mobile-big {
-    position: static;
-  }
 
   @include mobile-big {
     background-position: bottom;

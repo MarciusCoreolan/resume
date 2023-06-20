@@ -27,35 +27,37 @@ export const About: FC = () => {
   }
 
   return (
-    <div className={s.about} id={'about'}>
-      <div className={s.wrapper} ref={titleRef}>
-        {isInViewTitle ? (
-          <motion.h2
-            className={s.title}
-            initial={{ x: '300%' }}
-            animate={{ x: 0 }}
-            transition={{ duration: 1, ease: 'linear', type: 'spring' }}
-          >
-            About
-          </motion.h2>
-        ) : null}
+    <div className={s.aboutWrapper} id={'about'}>
+      <div className={s.about}>
+        <div className={s.wrapper} ref={titleRef}>
+          {isInViewTitle ? (
+            <motion.h2
+              className={s.title}
+              initial={{ x: '300%' }}
+              animate={{ x: 0 }}
+              transition={{ duration: 1, ease: 'linear', type: 'spring' }}
+            >
+              About
+            </motion.h2>
+          ) : null}
 
-        {isInViewList ? (
-          <div className={s.textSection} ref={listRef}>
-            {about_mock.map((item, index) => (
-              <motion.p
-                key={index}
-                className={s.text}
-                variants={isInViewList ? listVariants : undefined}
-                initial='hidden'
-                animate='visible'
-                custom={index}
-              >
-                {item.text}
-              </motion.p>
-            ))}
-          </div>
-        ) : null}
+          {isInViewList ? (
+            <div className={s.textSection} ref={listRef}>
+              {about_mock.map((item, index) => (
+                <motion.p
+                  key={index}
+                  className={s.text}
+                  variants={isInViewList ? listVariants : undefined}
+                  initial='hidden'
+                  animate='visible'
+                  custom={index}
+                >
+                  {item.text}
+                </motion.p>
+              ))}
+            </div>
+          ) : null}
+        </div>
       </div>
     </div>
   )

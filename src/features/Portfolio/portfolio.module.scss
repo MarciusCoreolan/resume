@@ -1,23 +1,31 @@
 @use 'styles' as *;
 
+.portfolioWrapper {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+
+  overflow: hidden;
+  min-height: 150vh;
+
+  @include mobile-big {
+    min-height: auto;
+    position: relative;
+  }
+}
+
 .portfolio {
   width: 100%;
   min-height: 100vh;
   background-color: $color-default-white;
   padding: 40px 0 0;
-  overflow: hidden;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  position: sticky;
-  z-index: 3;
-  top: 0;
-
   @include mobile-big {
     min-height: 60vh;
-    position: static;
   }
 }
 
@@ -52,7 +60,7 @@
   display: flex;
 
   @include mobile-big {
-    padding: 25px 10px ;
+    padding: 25px 10px;
   }
 
   div[class*='swiper-button-next'] {
@@ -110,28 +118,37 @@
 .slideImage {
   pointer-events: none;
 }
-.button {
+
+.link {
+  width: 200px;
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 2;
+
+  @include mobile-big {
+    max-width: 150px;
+  }
+}
+
+.button {
+  color: $color-default-black;
 
   div[class*='buttonBgHover'] {
     background-color: $color-default-black;
   }
 
-  button {
-    &:hover {
-      transition: 1s;
+  &:hover {
+    div[class*='button'] {
       color: $color-default-white;
 
       svg {
-        transition: 2s;
         color: $color-default-white;
       }
     }
   }
 
   @include mobile-big {
-    width: 120px;
+    width: 150px;
   }
 }

@@ -1,15 +1,31 @@
 @use 'styles' as *;
 
 .buttonWrapper {
+  box-sizing: border-box;
   width: 200px;
   overflow: hidden;
   border: 2px solid $color-default-black;
   position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  color: $color-default-white;
 
-  &:hover > .buttonBgHover {
-    position: absolute;
-    top: 0;
-    left: 0;
+  &:hover {
+    .buttonBgHover {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .button {
+      transition: 1s;
+      color: $color-default-black;
+
+      svg {
+        transition: 2s;
+        color: $color-default-black;
+      }
+    }
   }
 
   @include mobile-big {
@@ -28,6 +44,7 @@
   position: absolute;
   top: 0;
   left: -120%;
+  z-index: 0;
 
   @include mobile-big {
     left: -200%;
@@ -41,7 +58,6 @@
   box-sizing: border-box;
 
   text-align: center;
-  cursor: pointer;
   border: none;
   text-transform: uppercase;
   background-color: transparent;
@@ -58,16 +74,6 @@
 
   svg {
     margin-left: 10px;
-  }
-
-  &:hover {
-    transition: 1s;
-    color: $color-default-black;
-
-    svg {
-      transition: 2s;
-      color: $color-default-black;
-    }
   }
 
   @include mobile-big {

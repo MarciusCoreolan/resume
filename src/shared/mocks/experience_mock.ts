@@ -1,13 +1,13 @@
 export const experience_mock = [
   {
-    companyName: 'JGate',
+    companyName: 'Space-dog',
     position: 'Frontend developer/Tech Lead',
-    date: 'May 2022 – May 2023',
+    date: 'January 2022 – May 2023',
   },
   {
     companyName: 'ТОО ALSER (Gulser Computers)',
     position: 'Frontend developer',
-    date: 'January 2021 - May 2022',
+    date: 'January 2021 - January 2022',
   },
   {
     companyName: 'Freelance work',

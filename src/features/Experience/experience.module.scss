@@ -1,9 +1,7 @@
 @use 'styles' as *;
 
 .experienceWrapper {
-  width: 100%;
-  min-height: 100vh;
-  background-color: $color-default-black;
+  min-height: 150vh;
   overflow: hidden;
 
   position: sticky;
@@ -17,6 +15,12 @@
 }
 
 .experience {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $color-default-black;
+}
+
+.experienceContent {
   width: 100%;
   min-height: 100vh;
   background: url('/assets/images/experienceBg.webp') no-repeat;
@@ -95,7 +99,7 @@
 .wrap {
   @include wrapper;
   align-self: end;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
 
   @include desktop-medium {
     padding-top: 7%;

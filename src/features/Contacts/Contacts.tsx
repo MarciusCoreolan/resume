@@ -19,94 +19,96 @@ export const Contacts: FC = () => {
   const isInViewList = useInView(titleRef, { once: true })
 
   return (
-    <div className={s.contacts} id={'contacts'}>
-      <div className={s.wrapper} ref={titleRef}>
-        <div className={s.sendMe}>
-          {isInViewTitle ? (
-            <motion.h2
-              className={s.sendMeTitle}
-              initial={{ x: '-130vw' }}
-              animate={{ x: 0 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                ease: 'linear',
-                type: 'spring',
-              }}
-            >
-              Send me
-            </motion.h2>
-          ) : null}
+    <div className={s.contactsWrapper} id={'contacts'}>
+      <div className={s.contacts}>
+        <div className={s.wrapper} ref={titleRef}>
+          <div className={s.sendMe}>
+            {isInViewTitle ? (
+              <motion.h2
+                className={s.sendMeTitle}
+                initial={{ x: '-130vw' }}
+                animate={{ x: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: 0.5,
+                  ease: 'linear',
+                  type: 'spring',
+                }}
+              >
+                Send me
+              </motion.h2>
+            ) : null}
 
-          {isInViewList ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                duration: 1.5,
-                delay: 0.5,
-                ease: 'easeIn',
-              }}
-            >
-              <Input
-                value={name}
-                onChange={value => setName(value)}
-                label={'Name'}
-                classNames={s.input}
-              />
+            {isInViewList ? (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 1.5,
+                  delay: 0.5,
+                  ease: 'easeIn',
+                }}
+              >
+                <Input
+                  value={name}
+                  onChange={value => setName(value)}
+                  label={'Name'}
+                  classNames={s.input}
+                />
 
-              <Input
-                value={message}
-                onChange={value => setMessage(value)}
-                label={'Message'}
-                classNames={s.input}
-              />
+                <Input
+                  value={message}
+                  onChange={value => setMessage(value)}
+                  label={'Message'}
+                  classNames={s.input}
+                />
 
-              <Button onClick={() => {}} classNames={s.button}>
-                Send <Arrow />
-              </Button>
-            </motion.div>
-          ) : null}
-        </div>
+                <Button onClick={() => {}} classNames={s.button}>
+                  Send <Arrow />
+                </Button>
+              </motion.div>
+            ) : null}
+          </div>
 
-        <div className={s.services} ref={listRef}>
-          {isInViewTitle ? (
-            <motion.h2
-              className={s.servicesTitle}
-              initial={{ x: '130vw' }}
-              animate={{ x: 0 }}
-              transition={{
-                duration: 1,
-                delay: 0.5,
-                ease: 'linear',
-                type: 'spring',
-              }}
-            >
-              Services
-            </motion.h2>
-          ) : null}
+          <div className={s.services} ref={listRef}>
+            {isInViewTitle ? (
+              <motion.h2
+                className={s.servicesTitle}
+                initial={{ x: '130vw' }}
+                animate={{ x: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: 0.5,
+                  ease: 'linear',
+                  type: 'spring',
+                }}
+              >
+                Services
+              </motion.h2>
+            ) : null}
 
-          {isInViewList ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                duration: 1.5,
-                delay: 0.5,
-                ease: 'easeIn',
-              }}
-            >
-              {contacts_mock.map(item => (
-                <div key={item.title} className={s.service}>
-                  <div className={s.serviceIcon}>
-                    <img src={item.icon} alt={'services icon'} />
+            {isInViewList ? (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 1.5,
+                  delay: 0.5,
+                  ease: 'easeIn',
+                }}
+              >
+                {contacts_mock.map(item => (
+                  <div key={item.title} className={s.service}>
+                    <div className={s.serviceIcon}>
+                      <img src={item.icon} alt={'services icon'} />
+                    </div>
+
+                    <div>{item.title}</div>
                   </div>
-
-                  <div>{item.title}</div>
-                </div>
-              ))}
-            </motion.div>
-          ) : null}
+                ))}
+              </motion.div>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

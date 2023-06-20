@@ -1,24 +1,29 @@
 @use 'styles' as *;
 
+.skillsWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  overflow: hidden;
+  min-height: 150vh;
+
+  @include mobile-big {
+    min-height: auto;
+    position: relative;
+  }
+}
+
 .skills {
   width: 100%;
   background-color: $color-light-black;
   color: $color-default-white;
   padding: 40px 0 40px;
   min-height: 100vh;
-  overflow: hidden;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  position: sticky;
-  top: 0;
-  z-index: 5;
-
-  @include mobile-big {
-    position: static;
-  }
 }
 
 .titleWrapper {

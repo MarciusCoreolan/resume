@@ -49,9 +49,11 @@ export const Portfolio: FC = () => {
 
                 <div className={s.link}>
                   <Link href={item.link}>
-                    <Button onClick={() => {}} classNames={s.button}>
-                      Go to site <Arrow />
-                    </Button>
+                    <a>
+                      <Button onClick={() => {}} classNames={s.button}>
+                        Go to site <Arrow />
+                      </Button>
+                    </a>
                   </Link>
                 </div>
               </SwiperSlide>

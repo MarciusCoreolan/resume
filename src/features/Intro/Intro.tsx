@@ -69,9 +69,11 @@ export const Intro: FC = () => {
             }}
           >
             <Link href='#contacts'>
-              <Button onClick={() => {}} classNames={s.button}>
-                <span>Get started</span> <Arrow />
-              </Button>
+              <a>
+                <Button onClick={() => {}} classNames={s.button}>
+                  <span>Get started</span> <Arrow />
+                </Button>
+              </a>
             </Link>
           </motion.div>
         </div>

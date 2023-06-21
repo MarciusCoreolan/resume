@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Button, Loading } from 'components'
 
 import { portfolio_mock } from 'shared/mocks/portfolio_mock'
-import Arrow from '../../../public/assets/icons/arrow.svg'
+import Arrow from '/public/assets/icons/arrow.svg'
 
 import s from './portfolio.module.scss'
 import 'swiper/css'

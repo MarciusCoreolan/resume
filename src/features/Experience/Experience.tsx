@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 import cn from 'classnames'
+import { motion } from 'framer-motion'
 
 import { Checkbox } from 'components'
 
@@ -17,7 +18,15 @@ export const Experience: FC = () => {
     <div className={s.experienceWrapper} id={'experience'}>
       <div className={s.experience}>
         {isLight || width <= 768 ? (
-          <div className={s.experienceContent}>
+          <motion.div
+            className={s.experienceContent}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.2,
+              ease: 'easeIn',
+            }}
+          >
             <div className={s.wrap}>
               <div className={s.titles}>
                 <div className={s.title}>Experience</div>
@@ -36,9 +45,9 @@ export const Experience: FC = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ) : (
-          <div className={cn(s.shadow, { [s.light]: isLight })} />
+          <div className={s.shadow} />
         )}
 
         <div className={s.checkbox}>

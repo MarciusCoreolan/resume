@@ -13,7 +13,6 @@
     position: static;
   }
 }
-
 .experience {
   width: 100%;
   min-height: 100vh;
@@ -32,7 +31,7 @@
   align-items: center;
 
   @include mobile-big {
-    background: url('../../../public/assets/images/experincebgmobile.webp')
+    background: url('/assets/images/experincebgmobile.webp')
       no-repeat;
     background-size: cover;
   }
@@ -72,15 +71,6 @@
   }
 }
 
-.light {
-  transition: 0.3s;
-  opacity: 0;
-
-  @include mobile-big {
-    opacity: 1;
-  }
-}
-
 .checkbox {
   position: absolute;
   z-index: 1;
@@ -106,7 +96,7 @@
   }
 
   @include mobile-big {
-    align-self: center;
+    align-self: end;
   }
 }
 

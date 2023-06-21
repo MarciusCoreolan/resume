@@ -21,6 +21,7 @@
     no-repeat left;
   background-size: 50% 100%;
   color: $color-default-white;
+  position: relative;
 
   display: flex;
   justify-content: center;
@@ -84,7 +85,8 @@
   }
 }
 
-.input {
+.input,
+.inputContact {
   margin-bottom: 50px;
 
   input {
@@ -96,6 +98,33 @@
     @include desktop-medium {
       font-size: 22px;
       line-height: 30px;
+    }
+  }
+}
+.inputContact {
+  &:after {
+    content: 'example: example@gmail.com, https://t.me/example, +77777777777';
+    width: 140px;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+
+    background-color: $color-default-white;
+    border-radius: 5px;
+    color: $color-default-black;
+    padding: 5px 10px;
+
+    position: absolute;
+    bottom: -130%;
+    z-index: 1;
+
+    font-size: 12px;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+      transition: 0.3s;
     }
   }
 }

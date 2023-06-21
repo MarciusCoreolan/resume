@@ -1,32 +1,44 @@
 import { FC, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useRouter } from 'next/router'
+import axios from 'axios'
 
-import { Button, Input } from 'components'
+import { Button, ErrorPopup, Input } from 'components'
 
 import Arrow from '/public/assets/icons/arrow.svg'
 import { contacts_mock } from 'shared/mocks/contacts_mock'
 
 import s from './contacts.module.scss'
-import axios from 'axios'
-import { useRouter } from 'next/router'
 
 export const Contacts: FC = () => {
   const { push } = useRouter()
+  const [error, setError] = useState<string>('')
   const titleRef = useRef(null)
   const listRef = useRef(null)
 
-  const [name, setName] = useState('')
+  const [contact, setContact] = useState('')
   const [message, setMessage] = useState('')
 
   const isInViewTitle = useInView(titleRef, { once: true })
   const isInViewList = useInView(titleRef, { once: true })
 
-  const botToken = '6240659689:AAG61CCJZcZpd6WoYd4ukOJSaWbq5Pe_aVY'
-  const chatId = 309435208
-  const onSubmit = async (e: { message: string; name: string }) => {
+  const handleCloseError = () => {
+    if (error) {
+      setError('')
+    }
+  }
+
+  const onSubmit = async () => {
+    if (!message || !contact) {
+      return setError('Please fill in all fields so that I can contact you')
+    }
+
+    const botToken = '6240659689:AAG61CCJZcZpd6WoYd4ukOJSaWbq5Pe_aVY'
+    const chatId = 309435208
+
     const messageData = {
-      name: e.name,
-      message: e.message,
+      name: contact,
+      message: message,
     }
 
     try {
@@ -41,11 +53,20 @@ export const Contacts: FC = () => {
       push('/thankYou')
     } catch (error) {
       console.error(error)
+      setError(
+        'Message was not delivered, please try again later, or contact me via contacts'
+      )
     }
   }
 
   return (
-    <div className={s.contactsWrapper} id={'contacts'}>
+    <div
+      className={s.contactsWrapper}
+      id={'contacts'}
+      onClick={handleCloseError}
+    >
+      {error ? <ErrorPopup errorMessage={error} /> : null}
+
       <div className={s.contacts}>
         <div className={s.wrapper} ref={titleRef}>
           <div className={s.sendMe}>
@@ -76,10 +97,10 @@ export const Contacts: FC = () => {
                 }}
               >
                 <Input
-                  value={name}
-                  onChange={value => setName(value)}
-                  label={'Name'}
-                  classNames={s.input}
+                  value={contact}
+                  onChange={value => setContact(value)}
+                  label={'Contact details'}
+                  classNames={s.inputContact}
                 />
 
                 <Input
@@ -89,12 +110,7 @@ export const Contacts: FC = () => {
                   classNames={s.input}
                 />
 
-                <Button
-                  onClick={() => {
-                    onSubmit({ message: message, name: name })
-                  }}
-                  classNames={s.button}
-                >
+                <Button onClick={onSubmit} classNames={s.button}>
                   Send <Arrow />
                 </Button>
               </motion.div>

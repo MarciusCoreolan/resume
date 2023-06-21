@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Pagination, Navigation, EffectCube } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -14,7 +15,6 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import 'swiper/css/scrollbar'
 import 'swiper/css/effect-cube'
-import Link from 'next/link'
 
 export const Portfolio: FC = () => {
   return (
@@ -22,30 +22,37 @@ export const Portfolio: FC = () => {
       <div className={s.portfolio}>
         <h2 className={s.title}>Portfolio</h2>
 
-        <div className={s.sliderWrap}>
-          <Swiper
-            modules={[Pagination, Navigation, EffectCube]}
-            className={s.slider}
-            grabCursor={true}
-            slidesPerView={1}
-            effect={'cube'}
-            cubeEffect={{
-              shadow: true,
-              slideShadows: true,
-              shadowOffset: 20,
-              shadowScale: 0.94,
-            }}
-            pagination
-            navigation
-          >
-            {portfolio_mock.map((item, index) => (
-              <SwiperSlide key={index} className={s.slide}>
+        <Swiper
+          modules={[Pagination, Navigation, EffectCube]}
+          className={s.slider}
+          grabCursor={true}
+          slidesPerView={1}
+          effect={'cube'}
+          cubeEffect={{
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94,
+          }}
+          loop
+          pagination
+          navigation
+        >
+          {portfolio_mock.map((item, index) => (
+            <SwiperSlide key={index} className={s.slide}>
+              <div className={s.slideImage}>
                 <Image
-                  src={item.slide}
-                  className={s.slideImage}
+                  src={item.src}
                   layout='fill'
-                  alt={'portfolio image'}
+                  alt={`project ${item.name} screenshot`}
                 />
+              </div>
+
+              <div className={s.slideFooter}>
+                <div className={s.projectInfo}>
+                  <div className={s.name}>{item.name}</div>
+                  <div className={s.description}>{item.description}</div>
+                </div>
 
                 <div className={s.link}>
                   <Link href={item.link}>
@@ -56,10 +63,10 @@ export const Portfolio: FC = () => {
                     </a>
                   </Link>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   )

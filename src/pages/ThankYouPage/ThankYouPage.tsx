@@ -19,7 +19,7 @@ export const ThankYouPage: FC = () => {
 
           <h2 className={s.title}>Message delivered successfully!</h2>
           <div className={s.subTitle}>
-            Thank you for your message, I will reply as soon <br />
+            Thank you for your message, <br />I will reply as soon <br />
             as possible
           </div>
         </div>

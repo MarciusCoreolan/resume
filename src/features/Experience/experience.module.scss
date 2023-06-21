@@ -31,8 +31,7 @@
   align-items: center;
 
   @include mobile-big {
-    background: url('/assets/images/experincebgmobile.webp')
-      no-repeat;
+    background: url('/assets/images/experincebgmobile.webp') no-repeat;
     background-size: cover;
   }
 }

@@ -1,10 +1,10 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Pagination, Navigation, EffectCube } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Button } from 'components'
+import { Button, Loading } from 'components'
 
 import { portfolio_mock } from 'shared/mocks/portfolio_mock'
 import Arrow from '../../../public/assets/icons/arrow.svg'
@@ -17,6 +17,8 @@ import 'swiper/css/scrollbar'
 import 'swiper/css/effect-cube'
 
 export const Portfolio: FC = () => {
+  const [onLoad, setOnLoad] = useState(true)
+
   return (
     <div className={s.portfolioWrapper} id={'portfolio'}>
       <div className={s.portfolio}>
@@ -45,7 +47,9 @@ export const Portfolio: FC = () => {
                   src={item.src}
                   layout='fill'
                   alt={`project ${item.name} screenshot`}
+                  onLoad={() => setOnLoad(false)}
                 />
+                {onLoad ? <Loading /> : null}
               </div>
 
               <div className={s.slideFooter}>

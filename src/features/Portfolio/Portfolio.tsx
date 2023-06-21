@@ -60,7 +60,7 @@ export const Portfolio: FC = () => {
 
                 <div className={s.link}>
                   <Link href={item.link}>
-                    <a>
+                    <a target='_blank'>
                       <Button onClick={() => {}} classNames={s.button}>
                         Go to site <Arrow />
                       </Button>

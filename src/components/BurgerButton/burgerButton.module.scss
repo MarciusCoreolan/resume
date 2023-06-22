@@ -1,0 +1,39 @@
+@use 'styles' as *;
+
+.burger {
+  cursor: pointer;
+  min-width: 56px;
+  max-width: 56px;
+  min-height: 42px;
+  max-height: 42px;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  background-color: transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mobile {
+    align-self: end;
+    transform: scaleX(-1);
+  }
+
+  path {
+    transition: 0.3s all;
+    color: $color-french-grey;
+  }
+}
+
+.active {
+  path {
+    &:nth-child(2) {
+      transform: translateX(11px);
+    }
+
+    &:nth-child(3) {
+      transform: translateX(23px);
+    }
+  }
+}

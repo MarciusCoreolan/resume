@@ -2,7 +2,7 @@
 
 .header {
   width: 100%;
-  padding: 5px 0;
+  padding: 15px 0;
 
   display: flex;
   align-items: center;
@@ -24,17 +24,5 @@
 
   @include mobile {
     justify-content: end;
-  }
-}
-
-.burger {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-
-  @include mobile {
-    align-self: end;
-    transform: scaleX(-1);
-    padding-top: 10px;
   }
 }

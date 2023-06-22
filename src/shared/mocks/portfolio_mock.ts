@@ -5,6 +5,7 @@ import ilonsi from '../../../public/assets/images/portfolio/ilonsi.webp'
 import integral from '../../../public/assets/images/portfolio/integral.webp'
 import chessy from '../../../public/assets/images/portfolio/chessy.webp'
 import aligator from '../../../public/assets/images/portfolio/aligator.webp'
+import canna from '../../../public/assets/images/portfolio/canna.webp'
 
 export const portfolio_mock = [
   {
@@ -54,12 +55,18 @@ export const portfolio_mock = [
       'This is a Web3 startup with an ambitious idea - to combine chess and monetization through NFT.',
     link: 'https://chessy.me/',
   },
-
   {
     id: 7,
     src: aligator.src,
     name: 'Rualligator',
     description: 'Online electronics store for users from Russia',
     link: 'https://rualligator.ru/',
+  },
+  {
+    id: 7,
+    src: canna.src,
+    name: 'Cannasapiens',
+    description: 'Landing page for nft token',
+    link: 'https://cannasapiens.io/',
   },
 ]

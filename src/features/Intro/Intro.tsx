@@ -15,7 +15,7 @@ export const Intro: FC = () => {
   return (
     <div className={s.introWrapper}>
       <Sidebar isOpened={isOpen} onClose={() => setIsOpen(false)} />
-      <Header onOpen={() => setIsOpen(prevState => !prevState)} />
+      <Header onOpen={() => setIsOpen(prevState => !prevState)} isOpen={isOpen} />
 
       <div className={s.intro}>
         <motion.div

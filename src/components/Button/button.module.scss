@@ -13,7 +13,6 @@
   &:hover {
     .buttonBgHover {
       position: absolute;
-      top: 0;
       left: 0;
     }
 
@@ -30,7 +29,7 @@
 }
 
 .buttonBgHover {
-  height: 100%;
+  height: 110%;
   width: 230px;
   background-color: $color-default-white;
   transition: 0.5s;
@@ -38,7 +37,7 @@
   pointer-events: none;
 
   position: absolute;
-  top: 0;
+  top: -3px;
   left: -120%;
   z-index: 0;
 }

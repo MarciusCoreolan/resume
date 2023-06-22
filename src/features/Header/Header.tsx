@@ -1,16 +1,16 @@
 import { FC } from 'react'
 import { motion } from 'framer-motion'
 
-import { Logo } from 'components'
-
-import Burger from '/public/assets/icons/burger.svg'
+import { BurgerButton, Logo } from 'components'
 
 import s from './header.module.scss'
 
 interface HeaderProps {
   onOpen: () => void
+  isOpen: boolean
 }
-export const Header: FC<HeaderProps> = ({ onOpen }) => {
+
+export const Header: FC<HeaderProps> = ({ onOpen, isOpen }) => {
   return (
     <motion.div
       className={s.header}
@@ -19,9 +19,7 @@ export const Header: FC<HeaderProps> = ({ onOpen }) => {
       transition={{ duration: 1, delay: 0.5 }}
     >
       <div className={s.wrapper}>
-        <button className={s.burger} onClick={onOpen}>
-          <Burger />
-        </button>
+        <BurgerButton onOpen={onOpen} isActive={isOpen} />
 
         <Logo />
       </div>

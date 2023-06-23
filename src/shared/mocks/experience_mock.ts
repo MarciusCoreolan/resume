@@ -10,13 +10,8 @@ export const experience_mock = [
     date: 'January 2021 - January 2022',
   },
   {
-    companyName: 'Freelance work',
+    companyName: 'OOO Sempropgrupp',
     position: 'Junior Frontend developer',
-    date: 'November 2020 — January 2021',
-  },
-  {
-    companyName: 'Intocode Coding Bootcamp',
-    position: 'Junior frontend developer',
-    date: 'May 2020 — November 2020',
-  },
+    date: 'February 2020 — January 2021',
+  }
 ]

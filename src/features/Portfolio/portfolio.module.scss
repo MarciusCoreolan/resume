@@ -39,7 +39,7 @@
   line-height: 59px;
 
   text-align: center;
-  color: $color-default-black;
+  color: $color-french-grey;
   margin-top: 20px;
 
   @include desktop-medium {
@@ -70,7 +70,7 @@
     position: absolute;
     right: -50px;
     top: 50%;
-    color: $color-default-black;
+    color: $color-french-grey;
 
     @include mobile-big {
       display: none;
@@ -82,7 +82,7 @@
     left: -50px;
     top: 50%;
     z-index: 1;
-    color: $color-default-black;
+    color: $color-french-grey;
 
     @include mobile-big {
       display: none;
@@ -147,7 +147,7 @@
   width: 60%;
   height: 100%;
   margin: auto;
-  color: $color-default-black;
+  color: $color-french-grey;
 
   @include tablet {
     width: 70%;
@@ -185,11 +185,11 @@
 }
 
 .button {
-  color: $color-default-black;
+  color: $color-french-grey;
   min-width: 200px;
 
   div[class*='buttonBgHover'] {
-    background-color: $color-default-black;
+    background-color: $color-french-grey;
   }
 
   &:hover {

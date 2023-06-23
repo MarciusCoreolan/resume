@@ -21,20 +21,20 @@ export const BurgerButton: FC<BurgerButtonProps> = ({ onOpen, isActive }) => {
         <path
           d='M3 3H53'
           stroke='currentColor'
-          stroke-width='5'
-          stroke-linecap='round'
+          strokeWidth='5'
+          strokeLinecap='round'
         />
         <path
           d='M3 21H41.6453'
           stroke='currentColor'
-          stroke-width='5'
-          stroke-linecap='round'
+          strokeWidth='5'
+          strokeLinecap='round'
         />
         <path
           d='M3 39H29.5197'
           stroke='currentColor'
-          stroke-width='5'
-          stroke-linecap='round'
+          strokeWidth='5'
+          strokeLinecap='round'
         />
       </svg>
     </button>

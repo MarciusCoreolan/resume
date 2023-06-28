@@ -10,7 +10,7 @@ export const experience_mock = [
     date: 'January 2021 - January 2022',
   },
   {
-    companyName: 'OOO Sempropgrupp',
+    companyName: 'OOO Semprogroup',
     position: 'Junior Frontend developer',
     date: 'February 2020 — January 2021',
   }
